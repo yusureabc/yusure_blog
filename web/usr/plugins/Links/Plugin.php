@@ -261,7 +261,7 @@ class Links_Plugin implements Typecho_Plugin_Interface
 			return '友情链接插件未激活';
 		}
 		if (!isset($pattern) || $pattern == "" || $pattern == NULL || $pattern == "SHOW_TEXT") {
-			$pattern = "<li><a href=\"{url}\" title=\"{title}\" target=\"_blank\">{name}</a></li>\n";
+			$pattern = "<li><a href=\"{url}\" title=\"{title}\" rel=\"nofollow\" target=\"_blank\">{name}</a></li>\n";
 		} else if ($pattern == "SHOW_IMG") {
 			$pattern = "<li><a href=\"{url}\" title=\"{title}\" target=\"_blank\"><img src=\"{image}\" alt=\"{name}\" /></a></li>\n";
 		} else if ($pattern == "SHOW_MIX") {
