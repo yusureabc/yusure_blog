@@ -29,15 +29,15 @@
 </head>
 
 <body><div class="header_container container">
-	<div class="top_header">
-		<a class="logo" href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->description(); ?>"><h1><?php $this->options->title(); ?></h1></a>
-	</div>
+    <div class="top_header">
+        <a class="logo" href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->description(); ?>"><h1><?php $this->options->title(); ?></h1></a>
+    </div>
 <header class="header">
-	<!-- Static navbar -->
+    <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
-	  
       
-	      <div class="navbar-header">
+      
+          <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -47,20 +47,22 @@
           <!--<a class="navbar-brand" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>-->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-		<ul class="nav navbar-nav navbar-right">
-		<?php @category_for_bootstrap_nav($this);?>
-		</ul>
+        <ul class="nav navbar-nav navbar-right">
+        <?php @category_for_bootstrap_nav($this);?>
+        </ul>
           <ul class="nav navbar-nav navbar-left">
-		    <li<?php if($this->is('index')): ?> class="active"<?php endif; ?>><a href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a></li>
-		    <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-		    <?php while($pages->next()): ?>
-		    <li<?php if($this->is('page', $pages->slug)): ?> class="active"<?php endif; ?>><a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a></li>
-	    	<?php endwhile; ?>
+            <li<?php if($this->is('index')): ?> class="active"<?php endif; ?>><a href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a></li>
+            <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+            <?php while($pages->next()): ?>
+            <li<?php if($this->is('page', $pages->slug)): ?> class="active"<?php endif; ?>>
+                <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+            </li>
+            <?php endwhile; ?>
           </ul>
         
       </div><!--end header's container-->
     </nav>
 </header></div><!--/.nav-collapse -->
 <div class="container outmost">
-	<div class="header2"><p><?php echo ($this->options->ac);?></p></div>
+    <div class="header2"><p><?php echo ($this->options->ac);?></p></div>
 <main class="main col-md-8 ">
