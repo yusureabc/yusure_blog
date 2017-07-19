@@ -31,8 +31,11 @@
                     <?php _e('首页'); ?>
                 </a>
 
+                
                 <?php $this->widget('Widget_Metas_Category_List')->to($category); ?>
                 <?php while ($category->next()): ?>
+
+                <span class="dropdown">
                 <?php if ( 0 == $category->parent ) { ?>
                     <a 
                     <?php if ( $this->is('post')): ?>
@@ -42,15 +45,31 @@
                     <?php endif; ?> href="<?php $category->permalink(); ?>" >
                         <?php $category->name(); ?>
                     </a>
-                <?php } ?>
-                <?php endwhile; ?>
+                    
+                    <!-- 子分类 Start -->
+                    <?php if ( count( $category->children ) > 0 ) { ?>
+                    <ul class="dropdown-content">
+                    <?php foreach ( (array)$category->children as $k => $child_item ) { ?>
+                        <li><a href="<?php echo $child_item['permalink']; ?>"> <?php echo $child_item['name']; ?> </a></li>
+                    <?php } ?>
+                    </ul>
+                    <?php } ?>
+                    <!-- 子分类 End -->
 
+                <?php } ?>
+                </span>
+
+                <?php endwhile; ?>
+                
+                
+                <!-- Single Page Start -->
                 <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                 <?php while($pages->next()): ?>
                     <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>">
                         <?php $pages->title(); ?>
                     </a>
                 <?php endwhile; ?>
+                <!-- Single Page End -->
             </nav>
 
             <!-- <div class="logo"><?php $this->options->title() ?></div>
