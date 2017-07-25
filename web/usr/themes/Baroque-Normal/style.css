@@ -625,6 +625,43 @@ a {
 #gotop:hover {
     color:#fff
 }
+
+/* nav 二级导航 Start */
+.dropdown
+{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content
+{
+    position: absolute;
+    display: none;
+    opacity: 0.8;
+    list-style-type:none;
+    margin-top: 0px;
+    margin-left: -75px;
+}
+
+.dropdown-content li
+{
+    width: 110px;
+    background-color: #333;
+    border: 1px solid #686464;
+    text-align: center;
+}
+
+.dropdown-content li a
+{
+    margin: 0 auto ! important;
+}
+
+.dropdown:hover .dropdown-content
+{
+    display: block;
+}
+/* nav 二级导航 End */
+
 @media only screen and (-o-min-device-pixel-ratio:2 / 1),only screen and (min--moz-device-pixel-ratio:2),only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-resolution:240dpi),only screen and (min-resolution:2dppx),only screen and (min-width:1900px) {
     html {
     font-size:16px
@@ -708,36 +745,3 @@ article .post-title {
 }
 }
 
-.dropdown
-{
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content
-{
-    position: absolute;
-    display: none;
-    opacity: 0.8;
-    list-style-type:none;
-    margin-top: 0px;
-    margin-left: -75px;
-}
-
-.dropdown-content li
-{
-    width: 110px;
-    background-color: #333;
-    border: 1px solid #686464;
-    text-align: center;
-}
-
-.dropdown-content li a
-{
-    margin: 0 auto ! important;
-}
-
-.dropdown:hover .dropdown-content
-{
-    display: block;
-}
