@@ -339,7 +339,7 @@ a {
     float:right
 }
 .post-content {
-    line-height:2rem
+    line-height: 1.6rem
 }
 .post-content a,.post-content a:link,.post-content a:visited {
     color:#00a3cf
@@ -347,13 +347,13 @@ a {
 .post-content a:active,.post-content a:hover {
     color:#00c4df
 }
-.post-content h1,.post-content h2,.post-content h3,.post-content h4,.post-content h5,.post-content h6 {
+/*.post-content h1,.post-content h2,.post-content h3,.post-content h4,.post-content h5,.post-content h6 {
     font-size:1.2rem;
     font-weight:400;
     margin:3rem 0 .5rem;
     padding-bottom:.5rem;
     border-bottom:1px dotted #ccc
-}
+}*/
 .post-content img {
     max-width:100%;
     margin:0 auto
