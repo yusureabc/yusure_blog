@@ -32,7 +32,7 @@
             </ul>
             <ul class="cpr">
                 <!-- <li><a href="http://weibo.com/" target="_blank" title="新浪微博" data-icon="s"></a></li> -->
-                <li><a href="https://github.com/" target="_blank" title="GitHub" data-icon="g"></a></li>
+                <li><a href="https://github.com/yusureabc" target="_blank" title="GitHub" data-icon="g"></a></li>
                 <li><a href="<?php $this->options->feedUrl(); ?>" target="_blank" title="订阅我" data-icon="f"></a></li>
                 <li><a href="http://typecho.org" target="_blank" title="Powered by Typecho" data-icon="t"></a></li>
                 <li><a href="tencent://message/?uin=54460532&Site=-&Menu=yes" target="_blank" title="一起撸代码" data-icon="c"></a></li>
