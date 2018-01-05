@@ -78,7 +78,7 @@ class FileCache_Plugin implements Typecho_Plugin_Interface
             $handle = @fopen($file_path, 'wb');
             if (@flock($handle, LOCK_EX|LOCK_NB))
             {
-                fwrite($handle, ob_get_contents()."<!-- This Is A Cache File Created At ".date("Y-m-d H:i:s", time()+28800)." Power By http://www.shionco.com -->");
+                fwrite($handle, ob_get_contents()."<!-- This Is A Cache File Created At ".date( 'Y-m-d H:i:s' ) . "-->" );
                 flock($handle, LOCK_UN);
             }
             fclose($handle);
