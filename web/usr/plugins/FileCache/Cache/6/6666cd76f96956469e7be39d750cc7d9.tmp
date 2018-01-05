@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Yusure's Blog</title>
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <link rel="stylesheet" href="http://test.yusure.cn/usr/themes/Baroque-Normal/style.css?ver=20180104">
+    <link rel="shortcut icon" href="http://yusure.cn/icon.ico">
+    <link rel="apple-touch-icon" href="http://yusure.cn/icon.png">
+    <meta name="description" content="Yusure的个人博客,记录了自己的coding之路" />
+<meta name="keywords" content="PHP,Mysql,服务器运维,网站开发,网络安全" />
+<meta name="generator" content="Typecho 1.1/17.10.30" />
+<meta name="template" content="Baroque-Normal" />
+<link rel="pingback" href="http://test.yusure.cn/action/xmlrpc" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://test.yusure.cn/action/xmlrpc?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://test.yusure.cn/action/xmlrpc?wlw" />
+<link rel="alternate" type="application/rss+xml" title="Yusure's Blog &raquo; RSS 2.0" href="http://test.yusure.cn/feed/" />
+<link rel="alternate" type="application/rdf+xml" title="Yusure's Blog &raquo; RSS 1.0" href="http://test.yusure.cn/feed/rss/" />
+<link rel="alternate" type="application/atom+xml" title="Yusure's Blog &raquo; ATOM 1.0" href="http://test.yusure.cn/feed/atom/" />
+<script type="text/javascript" src="http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shCore.min.js"></script>
+<script type="text/javascript" src="http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shAutoloader.js"></script>
+<link rel="stylesheet" type="text/css" href="http://test.yusure.cn/usr/plugins/SyntaxHighlighter/styles/shCoreDefault.css" />
+</head>
+<body>
+    <header id="header">
+        <div class="wrapper clearfix">
+            <nav id="nav" role="navigation">
+                <a class="current" href="http://test.yusure.cn/">
+                    首页                </a>
+                                                                <span class="dropdown">
+                    <a 
+                                                                 href="http://test.yusure.cn/category/php/" >
+                        PHP                    </a>
+                    <!-- 子分类 Start -->
+                                        <!-- 子分类 End -->
+                </span>
+                                                                <span class="dropdown">
+                    <a 
+                                                                 href="http://test.yusure.cn/category/front/" >
+                        前端                    </a>
+                    <!-- 子分类 Start -->
+                                        <ul class="dropdown-content">
+                                            <li><a href="http://test.yusure.cn/category/javascript/"> JavaScript </a></li>
+                                            <li><a href="http://test.yusure.cn/category/css/"> CSS </a></li>
+                                        </ul>
+                                        <!-- 子分类 End -->
+                </span>
+                                                                                                                                <span class="dropdown">
+                    <a 
+                                                                 href="http://test.yusure.cn/category/server/" >
+                        Server                    </a>
+                    <!-- 子分类 Start -->
+                                        <ul class="dropdown-content">
+                                            <li><a href="http://test.yusure.cn/category/linux/"> Linux </a></li>
+                                            <li><a href="http://test.yusure.cn/category/bsd/"> BSD </a></li>
+                                            <li><a href="http://test.yusure.cn/category/Windows/"> Windows </a></li>
+                                            <li><a href="http://test.yusure.cn/category/nginx/"> Nginx </a></li>
+                                            <li><a href="http://test.yusure.cn/category/mysql/"> Mysql </a></li>
+                                        </ul>
+                                        <!-- 子分类 End -->
+                </span>
+                                                                                                                                                                                                                                <span class="dropdown">
+                    <a 
+                                                                 href="http://test.yusure.cn/category/Personal/" >
+                        个人笔记                    </a>
+                    <!-- 子分类 Start -->
+                                        <!-- 子分类 End -->
+                </span>
+                                
+                <!-- Single Page Start -->
+                                                    <a href="http://test.yusure.cn/107.html">
+                        在线工具                    </a>
+                                    <a href="http://test.yusure.cn/start-page.html">
+                        关于                    </a>
+                                <!-- Single Page End -->
+            </nav>
+
+            <!-- <div class="logo">Yusure's Blog</div>
+            <div class="tri"></div> -->
+            <form class="search" method="post" action="/" role="search">
+                <input type="search" name="s" autocomplete="off">
+            </form>
+            <div id="toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+<div class="wrapper">
+    <div class="main" role="main">
+                    <article class="post">
+                <h2 class="post-title" itemprop="name headline">
+                    <a itemtype="url" href="http://test.yusure.cn/php/183.html">配置php的session存储到memcache或redis</a>
+                </h2>
+
+                <div class="post-meta">
+                    <span><a href="http://test.yusure.cn/category/php/">PHP</a></span><span datetime="2018-01-02T18:08:00+00:00" itemprop="datePublished">1月2日</span><span><a href="http://test.yusure.cn/php/183.html#comments">暂无评论</a></span>
+                </div>
+
+                <div class="post-content" itemprop="articleBody">
+                    <p>　　PHP默认配置是将session以文件形式存储在服务器上，网站访问量增加之后，单机的io是瓶颈，而且文本读取慢，除了默认的文本还可以存放到数据库，放到内存（memcache，redis）。不建议放到数据库里面，还是配置到内存里面比较爽，既提高了访问速度，又很好的实现了会话共享。</p>
+<h3>memcache 存储</h3>
+<h5>如何配置</h5>
+<p>服务端配置很简单只要两条配置命令</p>
+<ol>
+<li>在 php.ini 中全局设置
+<pre><code>session.save_handler = memcache
+session.save_path = "tcp://127.0.0.1:11211"</code></pre></li>
+<li>单一网站配置(在php入口处添加，用框架的项目只需要在配置文件里面修改就可以了)
+<pre><code>ini_set("session.save_handler", "memcache");
+ini_set("session.save_path", "tcp://192.168.48.128:11211");</code></pre></li>
+</ol>
+<h5>如何与网站应用互通</h5>
+<p>memcached 服务是没有密码的，如果没有限制的暴露在外网，任何用户都是可以连接的。<br />
+-l 是监听的服务器IP地址，默认是127.0.0.1，任何ip访问0.0.0.0</p>
+<h5>如何限制访问</h5>
+<ol>
+<li>利用 -l 参数，缺点是需要重新指定ip的时候需要重启，缓存会丢失。</li>
+<li>利用防火墙限制访问，推荐用这种方式，只需要配置规则就可以了，不影响memcahced运行。<br />
+<a href="https://blog.slogra.com/post-428.html" title="memcache做ip限制">memcache做ip限制</a>
+</li></ol><p class="more"><a href="http://test.yusure.cn/php/183.html" title="配置php的session存储到memcache或redis">- 阅读全文 -</a></p>                </div>
+            </article>
+                    <article class="post">
+                <h2 class="post-title" itemprop="name headline">
+                    <a itemtype="url" href="http://test.yusure.cn/server/182.html">本地 Git 项目推送至码云或GitHub</a>
+                </h2>
+
+                <div class="post-meta">
+                    <span><a href="http://test.yusure.cn/category/server/">Server</a></span><span datetime="2017-12-08T15:00:17+00:00" itemprop="datePublished">12月8日</span><span><a href="http://test.yusure.cn/server/182.html#comments">暂无评论</a></span>
+                </div>
+
+                <div class="post-content" itemprop="articleBody">
+                    <h4>使用场景：本地有版本库，云端还没有，正打算push到云端。</h4>
+<ol>
+<li>命令 <code>git init</code> 初始化git仓库</li>
+<li>命令 <code>git add .</code> （保存到缓存区）</li>
+<li>命令 <code>git commit -m "注释"</code> (推送到本地库中)</li>
+<li>在码云上新建版本仓库；</li>
+<li>命令 <code>git remote add origin + 仓库地址</code> （码云上新建项目点进去克隆或复制的链接）</li>
+<li>命令 <code>git pull origin master</code> (把分支上的文件拉下来)<br />
+可能遇到的问题：git pull 失败 ,提示：fatal: refusing to merge unrelated histories<br />
+<code>git pull origin master --allow-unrelated-histories</code></li>
+<li>命令 <code>git push origin master</code> (推送到远端仓库也就是码云上)<br />
+<code>git push --set-upstream origin master</code>    设置默认的云端仓库，以后只用 git push 即可！</li>
+</ol>                </div>
+            </article>
+                    <article class="post">
+                <h2 class="post-title" itemprop="name headline">
+                    <a itemtype="url" href="http://test.yusure.cn/Personal/180.html">解决Sublime Text 无法显示韩文</a>
+                </h2>
+
+                <div class="post-meta">
+                    <span><a href="http://test.yusure.cn/category/Personal/">个人笔记</a></span><span datetime="2017-11-21T09:55:35+00:00" itemprop="datePublished">11月21日</span><span><a href="http://test.yusure.cn/Personal/180.html#comments">暂无评论</a></span>
+                </div>
+
+                <div class="post-content" itemprop="articleBody">
+                    <p>1、打开 Sublime text&nbsp; --&gt; Preferences --&gt; Setting-User</p><p>2、添加 &quot;font_options&quot;: [ &quot;directwrite&quot;]</p><p><img src="/usr/uploads/2017/11/21/1511229227864512.png" title="1511229227864512.png" alt="image.png"/></p><p><br/></p><p>不显示韩文的时候是这个样子</p><p><img src="/usr/uploads/2017/11/21/1511229263688557.png" title="1511229263688557.png" alt="image.png"/></p><p><br/></p><p>加上那行配置之后就可以显示了</p><p><img src="/usr/uploads/2017/11/21/1511229292532348.png" title="1511229292532348.png" alt="image.png"/></p>                </div>
+            </article>
+                    <article class="post">
+                <h2 class="post-title" itemprop="name headline">
+                    <a itemtype="url" href="http://test.yusure.cn/server/178.html">Nginx 502 upstream sent too big header while reading response header from upstream</a>
+                </h2>
+
+                <div class="post-meta">
+                    <span><a href="http://test.yusure.cn/category/server/">Server</a>,<a href="http://test.yusure.cn/category/nginx/">Nginx</a></span><span datetime="2017-07-29T21:33:00+00:00" itemprop="datePublished">7月29日</span><span><a href="http://test.yusure.cn/server/178.html#comments">1 条评论</a></span>
+                </div>
+
+                <div class="post-content" itemprop="articleBody">
+                    <p>&nbsp; &nbsp; &nbsp; 线上部署的一个项目，通过OAuth登录完成之后，跳转回来就会出现502错误，错误必现。必现错误不用慌，从log里面仔细排查这个时间段的每一条记录，access log里面一般不会记录具体原因，只会记录502请求状态，想要查看具体原因还得看error log，如果log配置没搞好的话，建议先配置好log，然后再触发一次错误，这样就可以分析错误了。</p><p><a href="http://test.yusure.cn/nginx/133.html" target="_blank" textvalue="nginx错误日志error_log日志级别">nginx错误日志error_log日志级别</a></p><p><img src="/usr/uploads/2017/07/29/1501335205356294.png" title="1501335205356294.png" alt="image.png"/></p><p>解决方法：在配置文件中加入这两个配置</p><pre class="brush:php;toolbar:false">location&nbsp;~&nbsp;\.php$&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_buffer_size&nbsp;128k;
+&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_buffers&nbsp;32&nbsp;32k;
+}</pre><p>重新加载Nginx，继续测试，正常没有报错！</p>                </div>
+            </article>
+                    <article class="post">
+                <h2 class="post-title" itemprop="name headline">
+                    <a itemtype="url" href="http://test.yusure.cn/php/175.html">PHP查看对象中的所有方法名</a>
+                </h2>
+
+                <div class="post-meta">
+                    <span><a href="http://test.yusure.cn/category/php/">PHP</a></span><span datetime="2017-07-17T11:00:00+00:00" itemprop="datePublished">7月17日</span><span><a href="http://test.yusure.cn/php/175.html#comments">1 条评论</a></span>
+                </div>
+
+                <div class="post-content" itemprop="articleBody">
+                    <p>&nbsp; &nbsp; 一个类有很多方法，有时候拿不准用哪个方法去处理，可以全部打印出来，一个类都什么方法，一目了然。</p><pre class="brush:php;toolbar:false">&lt;?php
+class&nbsp;a
+{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;$a&nbsp;=&nbsp;1;
+
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;__construct()&nbsp;{&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;aaa()
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&quot;a&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;get_name()&nbsp;{&nbsp;}
+}
+
+$a&nbsp;=&nbsp;new&nbsp;a();
+var_dump(&nbsp;get_class_methods(&nbsp;$a&nbsp;)&nbsp;);</pre><p>0 =&gt; string &#39;__construct&#39; (length=11)</p><p>1 =&gt; string &#39;aaa&#39; (length=3)</p><p>2 =&gt; string &#39;get_name&#39; (length=8)</p><p><br/></p>                </div>
+            </article>
+            </div>
+
+    <div class="pagenav clearfix">
+                <a class="next" title="" href="http://test.yusure.cn/page/2/">&gt;</a>    </div>
+</div>
+
+<footer class="footer">
+    <div class="wrapper btm clearfix">
+        <div class="btm-nav">
+                            <h3 class="btm-title">友情链接</h3>
+                <ul class="btm-list links clearfix">
+                    <li><a href="http://leerd.cn" title="Lee的博客" target="_blank">Leerd's Blog</a></li>
+<li><a href="http://www.erlibu.com" title="儿里不微博，儿里不社区，金乡的人，金乡的事" target="_blank">儿里不社区</a></li>
+<li><a href="http://blog.csdn.net/mffandxx" title="元大哥的博客" target="_blank">架构师元大'S Blog</a></li>
+<li><a href="http://blog.csdn.net/dnnis" title="鞠老师的 Blog" target="_blank">鞠老师的 Blog</a></li>
+<li><a href="http://www.jishugou.wang/" title="技术狗源码网，全部免费" target="_blank">技术狗源码网</a></li>
+<li><a href="http://www.zh30.com/" title="郑晓的技术博客，记录工作学习过程中遇到问题经验。" target="_blank">郑晓_个人博客</a></li>
+<li><a href="http://yhbin.cn/" title="专注PHP开发" target="_blank">PHP--海滨</a></li>
+<li><a href="http://www.junprivate.cn/" title="全栈俊达" target="_blank">全栈俊达</a></li>
+<li><a href="https://www.wangsfox.me/" title="" target="_blank">wangsfox</a></li>
+                </ul>
+                    </div>
+
+        <div class="btm-nav">
+            <h3 class="btm-title">随机文章</h3>
+            <ul class="btm-list">
+                <li><a href="http://test.yusure.cn/php/20.html">PHP大神的十大优良习惯</a></li><li><a href="http://test.yusure.cn/linux/15.html">Centos下安装svn客户端</a></li><li><a href="http://test.yusure.cn/mysql/21.html">mysql语句：批量更新多条记录的不同值</a></li><li><a href="http://test.yusure.cn/php/28.html">php下curl模拟百度蜘蛛进行采集</a></li><li><a href="http://test.yusure.cn/php/59.html">PHP中9大缓存技术总结</a></li><li><a href="http://test.yusure.cn/mysql/52.html">MySQL 5.6内存占用过高解决方案</a></li><li><a href="http://test.yusure.cn/mysql/71.html">mysql 远程连接速度慢的解决方案</a></li><li><a href="http://test.yusure.cn/php/161.html">wamp 3.0.6(apache 2.4.23) 配置多站点</a></li><li><a href="http://test.yusure.cn/mysql/132.html">SQL取出某字段中所有值为整数的数据</a></li><li><a href="http://test.yusure.cn/server/174.html">Mysql错误 Index column size too large. The maximum column size is 767 bytes</a></li>            </ul>
+        </div>
+
+        <div class="btm-nav">
+            <h3 class="btm-title">热门标签</h3>
+            <ul class="btm-list tags clearfix">
+                <li><a href="http://test.yusure.cn/tag/PHP/" title="17 个相关">PHP</a></li><li><a href="http://test.yusure.cn/tag/mysql/" title="4 个相关">mysql</a></li><li><a href="http://test.yusure.cn/tag/curl/" title="3 个相关">curl</a></li><li><a href="http://test.yusure.cn/tag/%E9%87%87%E9%9B%86/" title="2 个相关">采集</a></li><li><a href="http://test.yusure.cn/tag/javascript/" title="2 个相关">javascript</a></li><li><a href="http://test.yusure.cn/tag/wamp/" title="2 个相关">wamp</a></li><li><a href="http://test.yusure.cn/tag/windows/" title="2 个相关">windows</a></li><li><a href="http://test.yusure.cn/tag/sublime/" title="2 个相关">sublime</a></li><li><a href="http://test.yusure.cn/tag/nginx/" title="2 个相关">nginx</a></li><li><a href="http://test.yusure.cn/tag/html/" title="1 个相关">html</a></li><li><a href="http://test.yusure.cn/tag/%E6%8F%90%E5%8F%96%E9%A1%B5%E9%9D%A2/" title="1 个相关">提取页面</a></li><li><a href="http://test.yusure.cn/tag/%E6%AD%A3%E5%88%99/" title="1 个相关">正则</a></li><li><a href="http://test.yusure.cn/tag/%E7%88%AC%E8%99%AB/" title="1 个相关">爬虫</a></li><li><a href="http://test.yusure.cn/tag/http%E7%8A%B6%E6%80%81%E7%A0%81/" title="1 个相关">http状态码</a></li><li><a href="http://test.yusure.cn/tag/git/" title="1 个相关">git</a></li><li><a href="http://test.yusure.cn/tag/iis/" title="1 个相关">iis</a></li><li><a href="http://test.yusure.cn/tag/win2003/" title="1 个相关">win2003</a></li><li><a href="http://test.yusure.cn/tag/linux/" title="1 个相关">linux</a></li><li><a href="http://test.yusure.cn/tag/session/" title="1 个相关">session</a></li>            </ul>
+            <ul class="cpr">
+                <!-- <li><a href="http://weibo.com/" target="_blank" title="新浪微博" data-icon="s"></a></li> -->
+                <li><a href="https://github.com/yusureabc" target="_blank" title="GitHub" data-icon="g"></a></li>
+                <li><a href="http://test.yusure.cn/feed/" target="_blank" title="订阅我" data-icon="f"></a></li>
+                <li><a href="http://typecho.org" target="_blank" title="Powered by Typecho" data-icon="t"></a></li>
+                <li><a href="tencent://message/?uin=54460532&Site=-&Menu=yes" target="_blank" title="一起撸代码" data-icon="c"></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="http://test.yusure.cn/usr/themes/Baroque-Normal/scripts/common.js"></script>
+        <script type="text/javascript">
+            if (typeof(SyntaxHighlighter) !== undefined) {
+                var preList = document.getElementsByTagName('pre');
+                for (var i = 0; i < preList.length; i ++) {
+                    var children = preList[i].getElementsByTagName('code');
+                    if (children.length > 0) {
+                        var language = 'plain';
+                        var code = children[0], className = code.className;
+                        if (!!className) {
+                            var match = XRegExp.exec(className, XRegExp('^(lang|language)-(?<language>.*)$'));
+                            if (match && match.language) {
+                                language = match.language;
+                            }
+                        }
+                        preList[i].className = 'brush: ' + language;
+                        preList[i].innerHTML = code.innerHTML;
+                    }
+                }
+                SyntaxHighlighter.autoloader(
+                        'applescript           http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushAppleScript.js',
+                        'ahk autohotkey        http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushAhk.js',
+                        'actionscript3 as3     http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushAS3.js',
+                        'bash shell            http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushBash.js',
+                        'bat cmd batch         http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushBat.js',
+                        'coldfusion cf         http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushColdFusion.js',
+                        'cpp c                 http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushCpp.js',
+                        'c# c-sharp csharp     http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushCSharp.js',
+                        'css                   http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushCss.js',
+                        'delphi pascal pas     http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushDelphi.js',
+                        'diff patch            http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushDiff.js',
+                        'erl erlang            http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushErlang.js',
+                        'groovy                http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushGroovy.js',
+                        'java                  http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushJava.js',
+                        'jfx javafx            http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushJavaFX.js',
+                        'js jscript javascript http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushJScript.js',
+                        'perl pl               http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushPerl.js',
+                        'php                   http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushPhp.js',
+                        'text plain            http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushPlain.js',
+                        'powershell ps         http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushPowerShell.js',
+                        'py python             http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushPython.js',
+                        'ruby rails ror rb     http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushRuby.js',
+                        'sass scss             http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushSass.js',
+                        'scala                 http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushScala.js',
+                        'sql                   http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushSql.js',
+                        'vb vbnet              http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushVb.js',
+                        'xml xhtml xslt html   http://test.yusure.cn/usr/plugins/SyntaxHighlighter/scripts/shBrushXml.js'
+                        );
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                SyntaxHighlighter.defaults['collapse'] = false;
+                SyntaxHighlighter.defaults['gutter'] = true;
+                SyntaxHighlighter.defaults['smart-tabs'] = false;
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                SyntaxHighlighter.defaults['toolbar'] = false;
+                SyntaxHighlighter.all();
+            }
+        </script>
+</body>
+</html>
+<!-- This Is A Cache File Created At 2018-01-05 16:02:14 Power By http://www.shionco.com -->
