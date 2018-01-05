@@ -23,8 +23,8 @@ function create_index()
     include( 'index.php' );
     $content = ob_get_contents();
     $content .= "\n<!-- Create time: " . date( 'Y-m-d H:i:s' ) . " -->";
-    /* 异步调用更新 */
-    $content .= "\n<script language=javascript src='build_index.php'></script>";
+    /* 调用更新 */
+    // $content .= "\n<script language=javascript src='build_index.php'></script>";
     ob_clean();
     $res = file_put_contents( 'index.html', $content );
     if ( $res !== false )
