@@ -22,17 +22,17 @@ function create_index()
     ob_start();
     include( 'index.php' );
     $content = ob_get_contents();
-    $content .= "\n<!-- Create time: " . date( 'Y-m-d H:i:s' ) . " -->";
+    $content .= "\n<!-- Creation time: " . date( 'Y-m-d H:i:s' ) . " -->";
     /* 调用更新 */
     // $content .= "\n<script language=javascript src='build_index.php'></script>";
     ob_clean();
     $res = file_put_contents( 'index.html', $content );
     if ( $res !== false )
     {
-        die( 'Create successful' );
+        die( 'Created successfully' );
     }
     else
     {
-        die( 'Create error' );
+        die( 'Error' );
     }
 }
