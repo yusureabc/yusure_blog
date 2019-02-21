@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta http-equiv="Cache-Control" content="no-transform">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css?ver=20180104'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css?ver=20190221'); ?>">
     <link rel="shortcut icon" href="http://yusure.cn/icon.ico">
     <link rel="apple-touch-icon" href="http://yusure.cn/icon.png">
     <?php $this->header(); ?>
