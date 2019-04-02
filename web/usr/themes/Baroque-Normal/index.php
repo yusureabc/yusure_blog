@@ -21,7 +21,11 @@ $this->need('header.php');
                 </h2>
 
                 <div class="post-meta">
-                    <span><?php $this->category(','); ?></span><span datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('n月j日'); ?></span><span><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('暂无评论', '1 条评论', '%d 条评论'); ?></a></span>
+                    <span><?php $this->category(','); ?></span>
+                    <span datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d'); ?></span>
+                    <span>
+                        <a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('暂无评论', '1 条评论', '%d 条评论'); ?></a>
+                    </span>
                 </div>
 
                 <div class="post-content" itemprop="articleBody">
