@@ -63,7 +63,7 @@
 
             <!-- <div class="logo"><?php $this->options->title() ?></div>
             <div class="tri"></div> -->
-            <form class="search" method="post" action="/" role="search">
+            <form class="search" method="post" action="/search" role="search">
                 <input type="search" name="s" autocomplete="off">
             </form>
             <div id="toggle">
